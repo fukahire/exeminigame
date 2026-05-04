@@ -1,0 +1,1 @@
+import{d as e,c as o,o as t}from"./index-CijpXMa9.js";import{_ as s}from"./plugin-vueexport-helper-DlAUqK2U.js";const _={class:"mb-20 2xl:mb-0"},c=e({__name:"404",setup(a){return(n,r)=>(t(),o("div",_," 404 "))}}),d=s(c,[["__scopeId","data-v-24e561d7"]]);export{d as default};
