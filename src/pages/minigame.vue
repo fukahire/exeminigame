@@ -205,6 +205,7 @@ const currentHint = computed(()=>{
 <template>
     <!-- 社團攤位圖 -->
     <div class="flex flex-col justify-center items-center">
+        <p class="text-2xl text-[#30507a] font-black mb-8">洛克人拼字遊戲</p>
         <div class="font-bold mb-4 w-full gap-4 max-w-[40rem] grid grid-cols-6 justify-center items-center h-[5rem] p-4 ring-[#e5ad55] ring-4 rounded-lg bg-white">
             <div class="relative"><img class="max-w-[5rem] absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" src="/chatimg/1230.png" alt=""></div>
             <p class="col-span-5">{{ currentHint.hint }}</p>

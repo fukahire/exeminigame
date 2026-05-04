@@ -10,38 +10,38 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/",
-    name: "info",
-    component: () => import("../pages/info.vue"),
-  },
-  {
-    path: "/qa",
-    name: "qa",
-    component: () => import("../pages/qa.vue"),
-  },
-  {
-    path: "/character",
-    name: "character",
-    component: () => import("../pages/character.vue"),
-  },
-  {
-    path: "/booth",
-    name: "booth",
-    component: () => import("../pages/booth.vue"),
-  },
-  {
-    path: "/minigame",
     name: "minigame",
     component: () => import("../pages/minigame.vue"),
   },
-  {
-    path: "/game",
-    name: "game",
-    component: () => import("../pages/game.vue"),
-  },
+  // {
+  //   path: "/qa",
+  //   name: "qa",
+  //   component: () => import("../pages/qa.vue"),
+  // },
+  // {
+  //   path: "/character",
+  //   name: "character",
+  //   component: () => import("../pages/character.vue"),
+  // },
+  // {
+  //   path: "/booth",
+  //   name: "booth",
+  //   component: () => import("../pages/booth.vue"),
+  // },
+  // {
+  //   path: "/minigame",
+  //   name: "minigame",
+  //   component: () => import("../pages/minigame.vue"),
+  // },
+  // {
+  //   path: "/game",
+  //   name: "game",
+  //   component: () => import("../pages/game.vue"),
+  // },
 ];
 
 const router = createRouter({
-  history: createWebHistory('/gamecapsuleclub/'),
+  history: createWebHistory('/exeminigame/'),
   routes,
 });
 

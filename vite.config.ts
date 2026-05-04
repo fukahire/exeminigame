@@ -7,7 +7,7 @@ import fs from 'fs'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/gamecapsuleclub/', 
+  base: '/exeminigame/', 
   plugins: [vue(),
     tailwindcss(),
   {
