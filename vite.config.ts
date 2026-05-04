@@ -6,25 +6,21 @@ import fs from 'fs'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // 1. 再次確認：你的 Repository 名字現在真的是 "exeminigame" 嗎？
-  // 如果你的新 Repo 名字叫 "new-project"，這裡就要改成 "/new-project/"
-  base: '/exeminigame/', 
-  
+  base: '/exeminigame/', // 對應你的網址路徑，正確無誤
   plugins: [
     vue(),
     tailwindcss(),
     {
       name: 'fix-gh-pages',
       closeBundle() {
-        // 檢查 dist 目錄是否存在
         if (fs.existsSync('dist')) {
-          // 原本你有的：複製 404.html
+          // 1. 產生 404.html (你原本就有的功能)
           fs.copyFileSync('dist/index.html', 'dist/404.html')
           
-          // 新增這行：建立空的 .nojekyll 檔案，這能解決底線檔案找不到的問題
+          // 2. 產生 .nojekyll (解決底線檔案 404 的關鍵)
           fs.writeFileSync('dist/.nojekyll', '')
           
-          console.log('✅ 已自動產生 404.html 與 .nojekyll')
+          console.log('✅ 已成功產生 404.html 與 .nojekyll 檔案');
         }
       }
     }
