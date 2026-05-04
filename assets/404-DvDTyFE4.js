@@ -1,1 +1,0 @@
-import{d as e,c as o,o as s,_ as t}from"./index-VWKKc4Py.js";const _={class:"mb-20 2xl:mb-0"},c=e({__name:"404",setup(a){return(n,r)=>(s(),o("div",_," 404 "))}}),d=t(c,[["__scopeId","data-v-24e561d7"]]);export{d as default};
