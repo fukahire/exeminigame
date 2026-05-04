@@ -4,6 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import fs from 'fs'
 
+// eslint-disable-next-line no-control-regex
+const INVALID_CHAR_REGEX = /[\x00-\x1F\x7F<>*#"{}|^[\]`;?:&=+$,]/g;
+const DRIVE_LETTER_REGEX = /^[a-z]:/i;
+
 // https://vite.dev/config/
 export default defineConfig({
   base: '/exeminigame/', // 對應你的網址路徑，正確無誤
@@ -29,5 +33,21 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // https://github.com/rollup/rollup/blob/master/src/utils/sanitizeFileName.ts
+        sanitizeFileName(name) {
+          const match = DRIVE_LETTER_REGEX.exec(name);
+          const driveLetter = match ? match[0] : '';
+          // substr 是被淘汰語法，因此要改 slice
+          return (
+            driveLetter +
+            name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, "")
+          );
+        },
+      },
+    },
   }
 })
